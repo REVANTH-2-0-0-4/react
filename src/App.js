@@ -1,28 +1,16 @@
-import React,{useState} from "react";
+import React,{useState,useCallback} from "react";
 import Button from "./Button";
 import Text from "./Text";
-const App = ()=>{
-  const [impdata,setimpdata] = useState([
-    {id : 'a', text  : "text1"},
-    {id : 'b', text  : "text2"},
-    {id : 'c', text  : "text3"},
-    {id : 'd', text  : "text4"},
-    {id : 'e', text  : "text5"}
-  ])
- 
-    const revanth = () => {
-      setimpdata((prevdata) =>{
-        return [...prevdata,{id : 'f', text  : "text6"}]
-      })
-    }
 
-  
+const App = ()=>{
+  const[message,updatemessage] = useState(" hello user , good morning");
+   const revanth = useCallback( () =>{
+    updatemessage("hello user , good afternoon ");
+   },[])
     return (
       <>
-        {impdata.map((item, idx) => {
-          return <Text key={idx}>{item.text}</Text>;
-        })}
-        <Button revanth={revanth}>add more text</Button>
+       <div>{message}</div>
+       <Button revanth={revanth}>Change Message ..!</Button>
       </>
     );
     
