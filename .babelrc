@@ -1,0 +1,6 @@
+{
+    "presets": ["@babel/preset-env", "@babel/preset-react"]
+  }
+  // preset-env is to transpile the es6 to es5 
+  // preset-react is to transpile it to jsx 
+  
