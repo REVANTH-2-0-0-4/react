@@ -170,8 +170,8 @@ const App = () => {
 };
 ```
 
-- when this state variable message , gets updated , then the function revanth is getting created again , even though the function is same , and one line hasnt changed, the function reference , has changed , meaning that the same function is now created in different memory location
-  since the reference is changed : it is considered as a change in the reference and hence , that got rerendered , even when the memo is used with the Button component
+- when this state variable message , gets updated , then the function revanth is getting created again , even though the function is same , and even a single line hasnt changed, the function reference , has changed , meaning that the same function is now created in different memory location
+  since the reference is changed : it is considered as a change in the props and hence , that got rerendered , even when the memo is used with the Button component
   so to avoid this we use the react hook "usecallback"
   doing it like this avoids rerendering of the button :
   ```js
