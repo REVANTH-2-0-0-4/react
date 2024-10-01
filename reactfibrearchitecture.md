@@ -2,7 +2,7 @@
 # Reconciliation in React
 
 ## 1. Definition of Reconciliation
-Reconciliation is the algorithm React uses to diff one tree of nodes against another to determine which parts need to be updated in the DOM (or other rendering environments). This process ensures that the UI reflects the current state of the application without the need for costly full re-renders.
+Reconciliation is the algorithm React uses to diff one tree of nodes against another to determine which parts need to be updated in the DOM (or other rendering environments). This process ensures that the UI reflects the current state of the application without the need for costly full re-renders. so reconciliation is diffing algorithm 
 
 ### Analogy
 Imagine you have a big art project that you're working on. Instead of painting directly on the canvas every time you want to make a change, you create a sketch on paper first. This sketch is a lot easier to modify and helps you plan how the final artwork will look. This is similar to how React works with something called the virtual DOM.
@@ -55,16 +55,18 @@ In React, the re-rendering process is divided into two main phases: **Reconcilia
 
 ## 1. Reconciliation Phase
 **Reconciliation** is the process through which React determines what changes need to be made to the user interface, handled by the **reconciler**.
-- **React Fiber**: React Fiber is a reimplementation of the reconciler. It enhances the rendering process by allowing React to pause and resume work, enabling better performance and smoother updates. Fiber provides features like prioritizing updates and handling complex animations more efficiently.
+- **React Fiber**: . It enhances the rendering process by allowing React to pause and resume work, enabling better performance and smoother updates. Fiber provides features like prioritizing updates and handling complex animations more efficiently.
 -  for example if the user is interacting with the ui ( lets say scrolling )then its really important to update the screen , than processing the api fetch which can also happen later
-
-## 2. Rendering Phase
+- How this is done  , so basically before the introduction of react fiber,  all the changes was talking place at the same time , all the rerendering tasks are hanled by the  BROWSERS STACK , but  we need the prioritising of the tasks  right ? so we  react came up with its own staack , since  we cant change the working of the browser's stack , the new stack introuced by the stack is called as a virtual stack frame.
+- this virtual stack frame consists of a priority wise levles , and  each level is called a frame
+ ## 2. Rendering Phase
 **Rendering** is the phase where the reconciler’s findings are used to update the actual user interface, handled by the **renderer**.
 This separation of rerendering and reconciliation phase is  to make it accessible via multiple platforms lie web and app applications , the reconciliation logic is same  for the web and the app applications but the rerenderer is different for the native , ios and the web applicatios 
 
 ### Key Aspects of Rendering:
 - **Actual DOM Updates**: The renderer updates the real DOM based on the reconciliation results.
-- **React Fiber**: React Fiber is a reimplementation of the reconciler that allows React to pause and resume work, enhancing performance and enabling smoother updates. It provides features like prioritizing updates and managing complex animations efficiently.
+- **React Fiber**: React Fiber is a reimplementation of the stack that allows React to pause and resume work, enhancing performance and enabling smoother updates. It provides features like prioritizing updates and managing complex animations efficiently.
+- so react fiber is a re implementation of the browsers stack , it is  not the re implementation of the reconciliation algorithm , both are different things
 
 ---
 
