@@ -77,6 +77,7 @@ Modern browsers provide APIs that help manage when updates occur, allowing devel
 ### 1. `requestIdleCallback`
 - **Purpose**: Allows developers to schedule tasks during idle periods when the main thread is not busy, useful for performing background tasks without interrupting the UI.
 - **Usage**: Defers non-urgent work until the browser is idle, improving overall responsiveness.
+- but this request idle callback wait until the browser is empty , but what if the browser is busy all the time with some other work , so  to cater all these problems , react introduced virtual stack frame 
 
 ### 2. `requestAnimationFrame`
 - **Purpose**: Designed for creating smooth animations by requesting that the browser call a specified function to update an animation before the next repaint.
