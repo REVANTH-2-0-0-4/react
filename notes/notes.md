@@ -1,4 +1,4 @@
-# React Notes (Till Module 7)
+# React Notes 
 
 ## When to Use Curly Braces
 
